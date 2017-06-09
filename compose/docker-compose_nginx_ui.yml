@@ -1,9 +1,9 @@
 nginx1:
   image: nginx
   volumes:
-    - /opt/gopath/src/github.com/Chainnova/poc/externality:/www/externality
-    - /opt/gopath/src/github.com/Chainnova/poc/conf/nginx.conf:/etc/nginx/nginx.conf
-    - /opt/gopath/src/github.com/Chainnova/poc/conf/ui.conf:/etc/nginx/conf.d/ui.conf
+    - /opt/gopath/src/github.com/ChainNova/poc/nginx/externality:/www/externality
+    - /opt/gopath/src/github.com/ChainNova/poc/nginx/conf/nginx.conf:/etc/nginx/nginx.conf
+    - /opt/gopath/src/github.com/ChainNova/poc/nginx/conf/ui.conf:/etc/nginx/conf.d/ui.conf
   ports:
     - 8080:80
   environment:

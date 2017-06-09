@@ -120,17 +120,26 @@ adaptor0:
     - ADAPTOR_PEER_ADDRESS=vp0:7051
     #- ADAPTOR_PEER_TLS_ENABLED=true
     - ADAPTOR_PEER_TLS_CERT_FILE=server1.pem
+    - ADAPTOR_PEER_PKI_ECA_PADDR=membersrvc0:7054
+    - ADAPTOR_PEER_PKI_TCA_PADDR=membersrvc0:7054
+    - ADAPTOR_PEER_PKI_TLSCA_PADDR=membersrvc0:7054
   links:
     - membersrvc0
     - vp0
   ports:
     - 7061:7061
+  volumes:
+    - /var/hyperledger:/var/hyperledger
+    - /opt/gopath/src/github.com/ChainNova/poc/chaincode/:/opt/gopath/src/github.com/ChainNova/poc/chaincode/
 
 adaptor1:
   image: chainnova/exchange-adaptor
   command: adaptor
   environment:
     - ADAPTOR_PEER_ADDRESS=vp1:7051
+    - ADAPTOR_PEER_PKI_ECA_PADDR=membersrvc0:7054
+    - ADAPTOR_PEER_PKI_TCA_PADDR=membersrvc0:7054
+    - ADAPTOR_PEER_PKI_TLSCA_PADDR=membersrvc0:7054
   links:
     - membersrvc0
     - vp1
@@ -138,12 +147,16 @@ adaptor1:
     - 7062:7061
   volumes:
     - /var/hyperledger:/var/hyperledger
+    - /opt/gopath/src/github.com/ChainNova/poc/chaincode/:/opt/gopath/src/github.com/ChainNova/poc/chaincode/
 
 adaptor2:
   image: chainnova/exchange-adaptor
   command: adaptor
   environment:
     - ADAPTOR_PEER_ADDRESS=vp2:7051
+    - ADAPTOR_PEER_PKI_ECA_PADDR=membersrvc0:7054
+    - ADAPTOR_PEER_PKI_TCA_PADDR=membersrvc0:7054
+    - ADAPTOR_PEER_PKI_TLSCA_PADDR=membersrvc0:7054
   links:
     - membersrvc0
     - vp2
@@ -151,12 +164,16 @@ adaptor2:
     - 7063:7061
   volumes:
     - /var/hyperledger:/var/hyperledger
+    - /opt/gopath/src/github.com/ChainNova/poc/chaincode/:/opt/gopath/src/github.com/ChainNova/poc/chaincode/
 
 adaptor3:
   image: chainnova/exchange-adaptor
   command: adaptor
   environment:
     - ADAPTOR_PEER_ADDRESS=vp3:7051
+    - ADAPTOR_PEER_PKI_ECA_PADDR=membersrvc0:7054
+    - ADAPTOR_PEER_PKI_TCA_PADDR=membersrvc0:7054
+    - ADAPTOR_PEER_PKI_TLSCA_PADDR=membersrvc0:7054
   links:
     - membersrvc0
     - vp3
@@ -164,41 +181,40 @@ adaptor3:
     - 7064:7061
   volumes:
     - /var/hyperledger:/var/hyperledger
+    - /opt/gopath/src/github.com/ChainNova/poc/chaincode:/opt/gopath/src/github.com/ChainNova/poc/chaincode
 
 event0:
-   image: chainnova/exchange-event
-   command: event
-   environment:
-    - EVENT_REDIS_ADDRESS=120.92.77.55:6379
+  image: chainnova/exchange-event
+  command: event
+  environment:
+    - EVENT_REDIS_ADDRESS=10.0.2.15:6379
     - EVENT_EVENT_ADDRESS=vp0:7053
-   links:
+  links:
     - vp0
-  volumes:
-    - /var/hyperledger:/var/hyperledger
 
 event1:
-   image: chainnova/exchange-event
-   command: event
-   environment:
-    - EVENT_REDIS_ADDRESS=120.92.77.55:6379
+  image: chainnova/exchange-event
+  command: event
+  environment:
+    - EVENT_REDIS_ADDRESS=10.0.2.15:6379
     - EVENT_EVENT_ADDRESS=vp1:7053
-   links:
+  links:
     - vp1
 
 event2:
-   image: chainnova/exchange-event
-   command: event
-   environment:
-    - EVENT_REDIS_ADDRESS=120.92.77.55:6379
+  image: chainnova/exchange-event
+  command: event
+  environment:
+    - EVENT_REDIS_ADDRESS=10.0.2.15:6379
     - EVENT_EVENT_ADDRESS=vp2:7053
-   links:
+  links:
     - vp2
 
 event3:
-   image: chainnova/exchange-event
-   command: event
-   environment:
-    - EVENT_REDIS_ADDRESS=120.92.77.55:6379
+  image: chainnova/exchange-event
+  command: event
+  environment:
+    - EVENT_REDIS_ADDRESS=10.0.2.15:6379
     - EVENT_EVENT_ADDRESS=vp3:7053
-   links:
+  links:
     - vp3
