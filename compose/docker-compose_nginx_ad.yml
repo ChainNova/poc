@@ -1,4 +1,4 @@
-nginx-ad:
+nginx:
   image: nginx
   volumes:
     - /opt/gopath/src/github.com/ChainNova/poc/nginx/conf/nginx.conf:/etc/nginx/nginx.conf
