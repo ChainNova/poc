@@ -12,8 +12,8 @@ app:
   image: chainnova/exchange-app
   command: app
   environment:
-    - APP_REDIS_ADDRESS=10.0.2.15:6379
-    - APP_APP_ADAPTOR_ADDRESS=http://10.0.2.15:8080
+    - APP_REDIS_ADDRESS=120.92.77.55:6379
+    - APP_APP_ADAPTOR_ADDRESS=http://120.92.77.55:8080
   #  - APP_CHAINCODE_BUSINESS_PATH=github.com/ChainNova/poc/chaincode/exchange-chaincode
     - APP_CHAINCODE_BUSINESS_PATH=github.com/ChainNova/poc/chaincode/chaincode_example02
   #links:
