@@ -95,23 +95,23 @@ nvp0:
     - 7041:7051
     - 7043:7053
 
-nvp1:
-  extends:
-    file: docker-compose-4-consensus-base.yml
-    service: vpBase
-  environment:
-    - CORE_PEER_VALIDATOR_ENABLED=false
-    - CORE_PEER_DISCOVERY_ROOTNODE=vp0:7051
-    - CORE_PEER_ID=nvp1
-    - CORE_SECURITY_ENROLLID=test_nvp1
-    - CORE_SECURITY_ENROLLSECRET=DcYXuRSocuqd
-  links:
-    - membersrvc0
-    - vp0
-  ports:
-    - 7000:7050
-    - 7001:7051
-    - 7003:7053
+# nvp1:
+#   extends:
+#     file: docker-compose-4-consensus-base.yml
+#     service: vpBase
+#   environment:
+#     - CORE_PEER_VALIDATOR_ENABLED=false
+#     - CORE_PEER_DISCOVERY_ROOTNODE=vp0:7051
+#     - CORE_PEER_ID=nvp1
+#     - CORE_SECURITY_ENROLLID=test_nvp1
+#     - CORE_SECURITY_ENROLLSECRET=DcYXuRSocuqd
+#   links:
+#     - membersrvc0
+#     - vp0
+#   ports:
+#     - 7000:7050
+#     - 7001:7051
+#     - 7003:7053
 
 adaptor0:
   image: chainnova/exchange-adaptor

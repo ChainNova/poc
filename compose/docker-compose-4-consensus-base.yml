@@ -16,6 +16,8 @@ vpBase:
     #- CORE_PEER_TLS_ENABLED=true
     - CORE_PEER_TLS_CERT_FILE=core/chaincode/testdata/server1.pem
     - CORE_PEER_TLS_KEY_FILE=core/chaincode/testdata/server1.key
+    - CORE_CHAINCODE_STARTUPTIMEOUT=300000
+    - CORE_CHAINCODE_DEPLOYTIMEOUT=300000
 
 vpBatch:
   extends:

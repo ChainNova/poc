@@ -77,7 +77,7 @@ java Chaincode（必须关闭安全选项  docker-compose-4-consensus-base.yml�
       "id": 5
     }
 
-5. 删除所有容器   docker rm -f $(docker ps -a -q)
+5. 删除所有容器   docker rm $(docker ps -a -q)
    同时删除fabric数据   rm -r /var/hyperledger/production/
 
 6. 查看节点  get  http://localhost:7050/network/peers
@@ -98,3 +98,20 @@ java Chaincode（必须关闭安全选项  docker-compose-4-consensus-base.yml�
 	router.Get("/transactions/:id", (*ServerOpenchainREST).GetTransactionByID)
 
 	router.Get("/network/peers", (*ServerOpenchainREST).GetPeers)
+
+8. 查看文件句柄数 sudo lsof | wc -l
+
+9. 加载镜像 
+		docker load -i exchange-adaptor.tar
+		docker load -i exchange-app.tar
+		docker load -i exchange-event.tar
+		docker load -i fabric-baseimage.tar		
+        docker load -i fabric-ccenv.tar
+		docker load -i fabric-javaenv.tar
+		docker load -i fabric-membersrvc.tar
+		docker load -i fabric-peer.tar
+		docker load -i fabric-src.tar
+		docker load -i nginx.tar
+		docker load -i redis.tar
+
+10.  hyperledger/fabric-javaenv:x86_64-0.6.2-preview-snapshot-1f14698
