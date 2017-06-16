@@ -1,1 +1,0 @@
-define(["common/module","services/passport"],function(n){return n.directive("ngdPassport",["$location","$route","passportServ",function(n,r,t){return{restrict:"A",link:function(n,r,o,e){return r.on("click",function(){return t.open(o.ngdPassport,!0)})}}}])});

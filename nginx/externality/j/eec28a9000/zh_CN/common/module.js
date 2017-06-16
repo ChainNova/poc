@@ -1,1 +1,0 @@
-define(["config","vendor/ngSanitize","vendor/ngMessages","lib/dialog","lib/ajax"],function(){var n=window.Const;return n.user||(n.user={}),n.user.balance||(n.user.balance={ts:null,all:[]}),angular.module("CORE",["ngSanitize","ngMessages","ajax","dialog"])});

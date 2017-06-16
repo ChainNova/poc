@@ -1,1 +1,0 @@
-define(["common/module","components/balance"],function(e){return e.controller("balanceCtrl",["$scope",function(e){return e.$emit("updateViewLoaded")}])});

@@ -1,1 +1,0 @@
-define(["moment","common/locales"],function(e,n){return e.locale(n.get()),e});
